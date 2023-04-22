@@ -1,0 +1,133 @@
+<div class="container py-5"
+    style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+    <h3 class="text-center mb-3 login">JMeet</h3>
+    <div class="card">
+        <div class="card-header">
+            <p class="para">Signup Form</p>
+            <a href="/login" type="button" class="ca">Login</a>
+        </div>
+        <div class="card-body">
+            <form action="/signup" method="POST">
+                <% if(locals.messages.success){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= locals.messages.success %>
+                </div>
+                <% } %>
+                <% if(locals.messages.err){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= locals.messages.err %>
+                </div>
+                <% } %>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" name="name" class="form-control" placeholder="name" required>
+                            <label>Enter your Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" name="username" class="form-control" placeholder="username" required>
+                            <label>Enter your Username</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="email" name="email" class="form-control" placeholder="email" required>
+                        <label>Enter your Email</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" name="password" placeholder="password" required>
+                        <label for="floatingPassword">Enter your Password</label>
+                    </div>
+                </div>
+                <button style="width: 100%;" type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .login{
+        color: Blue;
+        margin-top: 50px;
+        font-size: 30px;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 400px;
+        background-color: white;
+        border: 6px double black;
+        border-radius: 2rem;
+        margin-top: 150px;
+    }
+    .card-header{
+        display: flex;
+        justify-content: space-evenly;
+        border-radius: 2rem;
+        padding: 12px;
+    }
+    .card-header .para{
+        color: #2a9fe2;
+    }
+    .card-header .ca{
+        text-decoration: none;
+        color: #2a9fe2;
+    }
+    .card-header .ca:hover{
+        background-color: black;
+        color: white;
+        padding: 0.2rem;
+        border-radius: 12px;
+    }
+    .card-body{
+        width: 100%;
+        height: 100%;
+    }
+    .alert{
+        color:red;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-floating{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 70%;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-control{
+        padding: 5px;
+        width: 80%;
+        margin: 0.5rem;
+    }
+    .label{
+        font-size: 22px;
+    }
+    .btn{
+        max-width: 60px;
+        height: 20px;
+        margin-left: 150px;
+        margin-top: 20px;
+    }
+    .btn:hover{
+        width: 100px;
+        height: 30px;
+        transition: 0.5s;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+    }
+</style>
